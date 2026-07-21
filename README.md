@@ -43,7 +43,7 @@ Camada de Acesso (Switches Layer 2): Equipamentos de baixo custo dedicados exclu
 
 Projeto: Arquitetura de Duas Camadas com Core Colapsado (Two-Tier) e Redundância
 Ambiente de Simulação: Cisco Packet Tracer v9.0
-Arquivo gerado: [ProjetoIntegradorFinal.pkt](src/ProjetoIntegradorFinal.pkt)
+Arquivo produzido: [ProjetoIntegradorFinal.pkt](src/ProjetoIntegradorFinal.pkt)
 
 ---
 

@@ -17,6 +17,10 @@ Professor: Geovane Estanislau
 Turma: INF14T-M-3D
 Autores: André Ângelo Ramos, João Paulo de Carvalho Silva, Roberto Edaes Nóbrega Júnior, Vitória Gomes de Souza
 
+Apresentação: [Entregável - Apresentação](docs/PI_Redes_UFMG-Betim_Grupo4_2026.pdf.pdf)
+
+Documentação: [Entregável - Documentação](docs/Implantação_Infraestrutura_Redes_NBR14724.pdf)
+
 ---
 
 ## Diagrama Técnico - Escopo do Projeto

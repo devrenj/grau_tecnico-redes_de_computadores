@@ -1,20 +1,29 @@
-# Projeto Técnico de Topologia Two-Tier com Core Colapsado
+# Projeto Técnico de Topologia Estrela (Two-Tier) com Core Colapsado
 
 ## Informações do Projeto
 
 Repositório do Projeto: [https://github.com/devrenj/grau_tecnico-redes_de_computadores](https://github.com/devrenj/grau_tecnico-redes_de_computadores)
+
 Conteúdo: Documentação, Projeto desenvolvido no Packet Tracer, Diagramação desenvolvida no Draw.io
 
+---
+
 Publicação/Demonstração: [https://www.linkedin.com/posts/devrenj_redesdecomputadores-cisco-packettracer-ugcPost-7485171689597734912-CR1n](https://www.linkedin.com/posts/devrenj_redesdecomputadores-cisco-packettracer-ugcPost-7485171689597734912-CR1n)
+
 Conteúdo: Resumo da elaboração do trabalho
+
+---
 
 Registro Acadêmico Oficial: [https://lattes.cnpq.br/6073310779255104](https://lattes.cnpq.br/6073310779255104)
 
 ---
 
 Escola: Grau Técnico
+
 Professor: Geovane Estanislau
+
 Turma: INF14T-M-3D
+
 Autores: André Ângelo Ramos, João Paulo de Carvalho Silva, Roberto Edaes Nóbrega Júnior, Vitória Gomes de Souza
 
 Apresentação: [Entregável - Apresentação](docs/PI_Redes_UFMG-Betim_Grupo4_2026.pdf.pdf)
@@ -46,7 +55,9 @@ Camada de Acesso (Switches Layer 2): Equipamentos de baixo custo dedicados exclu
 ## Relatório Técnico de Implementação de Infraestrutura de Rede
 
 Projeto: Arquitetura de Duas Camadas com Core Colapsado (Two-Tier) e Redundância
+
 Ambiente de Simulação: Cisco Packet Tracer v9.0
+
 Arquivo produzido: [ProjetoIntegradorFinal.pkt](src/ProjetoIntegradorFinal.pkt)
 
 ---
@@ -60,15 +71,14 @@ Optou-se pela arquitetura Two-Tier (Core Colapsado), fundindo as camadas de Núc
 A rede foi logicamente dividida em duas redes virtuais para isolamento de tráfego e segurança:
 
 VLAN 10 (Administração): Sub-rede 192.168.10.0/24 (Hosts da esquerda)
+
 VLAN 20 (Vendas): Sub-rede 192.168.20.0/24 (Hosts da direita)
 
 ---
 
 ## Projeto de Implementação
 
-O projeto técnico realizado utilizando o programa CISCO Packet Tracer teve sua estruturação implementada conforme as etapas abaixo.
-
----
+O projeto técnico realizado utilizando o programa CISCO Packet Tracer teve sua estruturação implementada conforme as etapas abaixo:
 
 ### Etapa 1: Montagem do Cenário e Energização do Core
 
@@ -97,6 +107,7 @@ exit
 ```
 
 Configuração das portas dos usuários (Modo Access):
+
 No Switch0 (Esquerda), colocamos os PCs na VLAN 10. No Switch1 (Direita), colocamos os PCs na VLAN 20:
 
 ```text
@@ -121,6 +132,7 @@ interface range fastEthernet 0/23 - 24
 ```
 
 Configuração do Core (Switches 3650):
+
 Por se tratar de portas multicamada, aplicamos o comando switchport para forçá-las a operar na Camada 2 antes de aplicar o tronco e o agrupamento:
 
 ```text
@@ -178,16 +190,19 @@ Fizemos o ajuste no Core liberando as portas correspondentes (interface gigabitE
 ## Resultados Finais e Comportamentos Observados
 
 Validação do Roteamento (O Teste do Ping):
+
 Ao acessar o Prompt de Comando do PC0 (VLAN 10) e disparar um teste para o PC2 (VLAN 20) através do comando `ping 192.168.20.11`, obtivemos 0% de perda de pacotes (Packets: Sent = 4, Received = 4, Lost = 0). Isso chancela que os switches de Core estão roteando os pacotes perfeitamente entre as redes virtuais.
 
 ![Teste de Alcance - Ping de PC0 para PC2 em VLANs diferentes](assets/TESTEpingPC0paraPC2.png)
 
 Comportamento do Spanning Tree (A Porta Laranja):
+
 Observou-se que a porta Fa0/24 do switch de acesso permaneceu na cor laranja. Esse comportamento é tecnicamente perfeito. O protocolo STP detectou o loop físico gerado pelo cabeamento em "X" e bloqueou logicamente aquela porta para evitar uma tempestade de broadcast, mantendo-a como um link de reserva imediato caso o cabo principal falhe.
 
 ![Teste de Redundância - Ping de PC1 para PC3 com Switch0 desligado](assets/TESTEpingPC1paraPC3redundancia.png)
 
 Status da Nuvem:
+
 Os triângulos superiores das nuvens permaneceram vermelhos, o que está correto dentro das limitações de escopo do simulador, já que representam o lado externo e passivo do link do provedor (WAN), não interferindo no sucesso do tráfego interno controlado pelos nossos roteadores.
 
 ---
@@ -206,9 +221,11 @@ Quando a base do projeto ficou sólida, foram adicionadas todas as VLANs correta
 | 60 | CFTV e IoT | Equipamento de monitoramento e dispositivos inteligentes. |
 
 Visualizando VLANs em Switch0:
+
 ![Visualização da configuração de VLANs no Switch0](assets/Topologia-Switch0.png)
 
 Visualizando VLANs em Switch1:
+
 ![Visualização da configuração de VLANs no Switch1](assets/Topologia-Switch1.png)
 
 ---
@@ -222,4 +239,5 @@ O projeto encerrado com êxito e todas as configurações ativas foram salvas na
 ## Fontes e Ferramentas
 
 Cisco Packet Tracer: [https://netacad.com/pt/cisco-packet-tracer](https://netacad.com/pt/cisco-packet-tracer)
+
 Draw.io: [https://drawio.com](https://drawio.com)
